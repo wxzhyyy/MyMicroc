@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "n0IYP7mGraucwC7V/HYtp5XaV4RAPlKqUNoJqNyJdWBmSbaz9dCXit5W3Y06XzHABLuP51n0IXbFWlfmMJNlGw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\14815\\2021春Homework\\现代编译原理\\sigcc-plzoofs-master\\plzoofs\\microc\\microc.fsproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\14815\\.nuget\\packages\\fsharp.core\\5.0.0\\fsharp.core.5.0.0.nupkg.sha512",
+    "C:\\Users\\14815\\.nuget\\packages\\fslexyacc\\10.2.0\\fslexyacc.10.2.0.nupkg.sha512",
+    "C:\\Users\\14815\\.nuget\\packages\\fslexyacc.runtime\\10.2.0\\fslexyacc.runtime.10.2.0.nupkg.sha512"
+  ],
+  "logs": []
+}
