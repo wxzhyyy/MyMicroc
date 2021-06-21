@@ -31,6 +31,8 @@ type token =
   | TIMES
   | DIV
   | MOD
+  | SWITCH
+  | CASE
   | COLON
   | QUEST
   | PREINC
@@ -81,6 +83,8 @@ type tokenId =
     | TOKEN_TIMES
     | TOKEN_DIV
     | TOKEN_MOD
+    | TOKEN_SWITCH
+    | TOKEN_CASE
     | TOKEN_COLON
     | TOKEN_QUEST
     | TOKEN_PREINC
@@ -116,6 +120,8 @@ type nonTerminalId =
     | NONTERM_StmtOrDecSeq
     | NONTERM_Stmt
     | NONTERM_StmtM
+    | NONTERM_CaseList
+    | NONTERM_CaseDec
     | NONTERM_StmtU
     | NONTERM_Expr
     | NONTERM_ExprNotAccess

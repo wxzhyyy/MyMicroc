@@ -208,6 +208,15 @@ let rec exec stmt (locEnv : locEnv) (gloEnv : gloEnv) (store : store) : store =
               if v<>0 then loop (snd (eval e3 locEnv gloEnv (exec body locEnv gloEnv store2)))
                       else store2
       loop store1
+    | Switch(e1,caseList) ->
+      let (v1, store1) = eval e1 locEnv gloEnv store
+      let rec loop caseList = 
+              match caseList with
+              | [] -> store
+              | case :: caseList2 -> let (v2,store2) = eval (fst case) locEnv gloEnv store1
+                                     if v1<>v2 then loop caseList2
+                                     else exec(snd case) locEnv gloEnv store2
+      loop caseList
     | While(e, body) ->
 
       //定义 While循环辅助函数 loop

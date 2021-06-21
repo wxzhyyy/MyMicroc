@@ -137,7 +137,20 @@ let rec cStmt stmt (varEnv : VarEnv) (funEnv : FunEnv) : instr list =
       @ [GOTO labtest; Label labbegin] @ cStmt body varEnv funEnv
       @ cExpr e3 varEnv funEnv @ [INCSP -1]
       @ [Label labtest] @ cExpr e2 varEnv funEnv @ [IFNZRO labbegin]
-       
+    | Switch(e1, caseList) -> 
+      let rec loop caseList1 lableend=
+          match caseList1 with 
+          | []     -> ([],[])
+          | case :: caseList2 ->
+          let labbegin = newLabel()
+          let labtest  = newLabel() 
+          let result=[GOTO labtest; Label labbegin] @ cStmt (snd case) varEnv funEnv @[GOTO lableend]@ [Label labtest] @cExpr e1 varEnv funEnv @ cExpr (fst case) varEnv funEnv@[EQ] @ [IFNZRO labbegin]
+          let (fdepthr,code)=loop caseList2 lableend
+          ([], result@code)
+
+      let lableend = newLabel()
+      let (fdepthend, code) = loop caseList lableend
+      code @[Label lableend]   
     | While(e, body) ->
       let labbegin = newLabel()
       let labtest  = newLabel()
