@@ -24,22 +24,22 @@ let fromString (str : string) : program =
 // CLex.Token 词法分析程序入口
 let token buf = 
     let res = CLex.Token buf
-    msg <|
+    info (fun () ->
           match res with
-           |CPar.EOF -> sprintf "%A\n" res
-           |_ -> sprintf "%A, " res
-           
+           |CPar.EOF -> printf "%A\n" res
+           |_ -> printf "%A, " res
+           )
     res
 (* Parsing from a file *)
 let fromFile (filename : string) =
     use reader = new StreamReader(filename)
     let lexbuf = Lexing.LexBuffer<char>.FromTextReader reader
     try 
-      msg "\nToken:\n"
+      info (fun ()-> printfn "\nToken:")
       
       //CPar.Main  语法分析主程序 
       let ast = CPar.Main token lexbuf in
-        msg "\nAST:\n";
+        info (fun ()-> printfn "\nAST:");
         ast
     with 
       | exn -> let pos = lexbuf.EndPos 

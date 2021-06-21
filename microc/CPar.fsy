@@ -8,7 +8,6 @@ open Absyn
 
 // Vardesc 返回的是一个 元组 (g,s)
 // g是类型构造函数，s是变量名
-// compose1 函数 取出 类型构造子 g，用类型复合机制构造类型。
 
 let compose1 f (g, s) = ((fun x -> g(f(x))), s)
 let nl = CstI 10 //  \n 的 ASCII 码
@@ -18,6 +17,7 @@ let nl = CstI 10 //  \n 的 ASCII 码
 %token <string> CSTSTRING NAME
 
 %token CHAR ELSE IF INT NULL PRINT PRINTLN RETURN VOID WHILE
+%token PREINC PREDEC
 %token PLUS MINUS TIMES DIV MOD
 %token EQ NE GT LT GE LE
 %token NOT SEQOR SEQAND
@@ -32,6 +32,7 @@ let nl = CstI 10 //  \n 的 ASCII 码
 %nonassoc GT LT GE LE
 %left PLUS MINUS
 %left TIMES DIV MOD 
+%nonassoc PREINC PREDEC
 %nonassoc NOT AMP 
 %nonassoc LBRACK          /* highest precedence  */
 
@@ -80,13 +81,12 @@ NAME  "n"   (fun t->t, "n") 返回一个元组，第一个元素，是类型构�
 
 // 变量描述
 Vardesc:                         
-    // "i"    标识符                        fun t->t  id 函数
+    // "i"    标识符
     NAME                                { ((fun t -> t), $1)                      }
     // "*p"   指针标识符
     // let compose1 f (g, s) = ((fun x -> g(f(x))), s)
-    //      compose1  (fun t -> TypP t) $2 ===  compose1 TypP $2 
-    //       TypP 指针类型构造子 
-  | TIMES Vardesc                       { compose1 TypP $2                        }  
+    //             compose1  (fun t -> TypP t) $2 ===  compose1 TypP $2  
+  | TIMES Vardesc                       { compose1 TypP $2                        }
     // (*p)   带括号的标识符                                 
   | LPAR Vardesc RPAR                   { $2                                      } 
     // ia[]   带方括号，无下标
@@ -145,13 +145,15 @@ StmtU:
 ;
 
 Expr: 
-    Access                              { Access $1           } //取$1的右值
-  | ExprNotAccess                       { $1                  } 
+    Access                              { Access $1           } //右值
+  | ExprNotAccess                       { $1                  } //左值
 ;
-  //非左值的情况
+
 ExprNotAccess:
     AtExprNotAccess                     { $1                  }
-  | Access ASSIGN Expr                  { Assign($1, $3)      } // $1为左值
+  | PREINC Access                       { PreInc $2           } 
+  | PREDEC Access                       { PreDec $2           } 
+  | Access ASSIGN Expr                  { Assign($1, $3)      }
   | NAME LPAR Exprs RPAR                { Call($1, $3)        }  
   | NOT Expr                            { Prim1("!", $2)      }
   | PRINT Expr                          { Prim1("printi", $2) }
@@ -178,10 +180,10 @@ AtExprNotAccess:
     // (3)   
     Const                               { CstI $1             }
   | LPAR ExprNotAccess RPAR             { $2                  } 
-  | AMP Access                          { Addr $2             } // 取地址
+  | AMP Access                          { Addr $2             }
 ;
 
-Access:    //可以为左值的情况
+Access:    // 右值
     NAME                                { AccVar $1           }  // 变量 x
   | LPAR Access RPAR                    { $2                  }  // 括号中的变量 (x)
   | TIMES Access                        { AccDeref (Access $2)}  // 指针  *x 

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "n0IYP7mGraucwC7V/HYtp5XaV4RAPlKqUNoJqNyJdWBmSbaz9dCXit5W3Y06XzHABLuP51n0IXbFWlfmMJNlGw==",
+  "dgSpecHash": "97+C5wN3Kx2qHGV2dOygq9cserQX9cYel+YxUFjsLjDShQKfLARUr99PYLuoMNlIqP9CSV2A4HP21pzlMd/QCg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\14815\\2021春Homework\\现代编译原理\\sigcc-plzoofs-master\\plzoofs\\microc\\microc.fsproj",
+  "projectFilePath": "C:\\Users\\14815\\Documents\\GitHub\\MyMicroc\\microc\\microc.fsproj",
   "expectedPackageFiles": [
     "C:\\Users\\14815\\.nuget\\packages\\fsharp.core\\5.0.0\\fsharp.core.5.0.0.nupkg.sha512",
     "C:\\Users\\14815\\.nuget\\packages\\fslexyacc\\10.2.0\\fslexyacc.10.2.0.nupkg.sha512",

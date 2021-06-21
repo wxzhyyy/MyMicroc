@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\14815\\2021春Homework\\现代编译原理\\sigcc-plzoofs-master\\plzoofs\\microc\\microc.fsproj": {}
+    "C:\\Users\\14815\\Documents\\GitHub\\MyMicroc\\microc\\microc.fsproj": {}
   },
   "projects": {
-    "C:\\Users\\14815\\2021春Homework\\现代编译原理\\sigcc-plzoofs-master\\plzoofs\\microc\\microc.fsproj": {
+    "C:\\Users\\14815\\Documents\\GitHub\\MyMicroc\\microc\\microc.fsproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\14815\\2021春Homework\\现代编译原理\\sigcc-plzoofs-master\\plzoofs\\microc\\microc.fsproj",
+        "projectUniqueName": "C:\\Users\\14815\\Documents\\GitHub\\MyMicroc\\microc\\microc.fsproj",
         "projectName": "microc",
-        "projectPath": "C:\\Users\\14815\\2021春Homework\\现代编译原理\\sigcc-plzoofs-master\\plzoofs\\microc\\microc.fsproj",
+        "projectPath": "C:\\Users\\14815\\Documents\\GitHub\\MyMicroc\\microc\\microc.fsproj",
         "packagesPath": "C:\\Users\\14815\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\14815\\2021春Homework\\现代编译原理\\sigcc-plzoofs-master\\plzoofs\\microc\\obj\\",
+        "outputPath": "C:\\Users\\14815\\Documents\\GitHub\\MyMicroc\\microc\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\14815\\AppData\\Roaming\\NuGet\\NuGet.Config"

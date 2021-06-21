@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\14815\\2021春Homework\\现代编译原理\\sigcc-plzoofs-master\\plzoofs\\microc\\machine.csproj": {}
+    "D:\\计算机科学\\study2021上\\编程语言原理与编译\\课程资料\\sigcc-plzoofs-master\\plzoofs\\microc\\machine.csproj": {}
   },
   "projects": {
-    "c:\\Users\\14815\\2021春Homework\\现代编译原理\\sigcc-plzoofs-master\\plzoofs\\microc\\machine.csproj": {
+    "D:\\计算机科学\\study2021上\\编程语言原理与编译\\课程资料\\sigcc-plzoofs-master\\plzoofs\\microc\\machine.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\14815\\2021春Homework\\现代编译原理\\sigcc-plzoofs-master\\plzoofs\\microc\\machine.csproj",
+        "projectUniqueName": "D:\\计算机科学\\study2021上\\编程语言原理与编译\\课程资料\\sigcc-plzoofs-master\\plzoofs\\microc\\machine.csproj",
         "projectName": "machine",
-        "projectPath": "c:\\Users\\14815\\2021春Homework\\现代编译原理\\sigcc-plzoofs-master\\plzoofs\\microc\\machine.csproj",
-        "packagesPath": "C:\\Users\\14815\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\14815\\2021春Homework\\现代编译原理\\sigcc-plzoofs-master\\plzoofs\\microc\\obj\\",
+        "projectPath": "D:\\计算机科学\\study2021上\\编程语言原理与编译\\课程资料\\sigcc-plzoofs-master\\plzoofs\\microc\\machine.csproj",
+        "packagesPath": "C:\\Users\\lenovo\\.nuget\\packages\\",
+        "outputPath": "D:\\计算机科学\\study2021上\\编程语言原理与编译\\课程资料\\sigcc-plzoofs-master\\plzoofs\\microc\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\14815\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -53,7 +53,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }

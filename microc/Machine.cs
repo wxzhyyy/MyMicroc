@@ -221,10 +221,10 @@ class Machine
         List<Int32> rawprogram = new List<Int32>();
         StreamReader sr = new StreamReader(filename);
 
-        string[] ins = Regex.Split(sr.ReadToEnd(), @"\s+");
+        string[] ins = Regex.Split(sr.ReadToEnd(), "\\s+");
         foreach (string item in ins)
         {
-            rawprogram.Add(Int32.Parse(item));
+            rawprogram.Add(Int16.Parse(item));
         }
 
 
