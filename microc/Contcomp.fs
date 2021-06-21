@@ -190,6 +190,14 @@ let rec cStmt stmt (varEnv : VarEnv) (funEnv : FunEnv) (C : instr list) : instr 
       let (labelse, C2) = addLabel (cStmt stmt2 varEnv funEnv C1)
       cExpr e varEnv funEnv (IFZERO labelse 
        :: cStmt stmt1 varEnv funEnv (addJump jumpend C2))
+    | For(e1, e2, e3, body) ->         
+      let labbegin = newLabel()
+      let (jumptest, C1) = 
+           makeJump (cExpr e2 varEnv funEnv (IFNZRO labbegin :: C))
+      cExpr e1 varEnv funEnv 
+        (addINCSP -1 (addJump jumptest 
+           (Label labbegin :: cStmt body varEnv funEnv
+             (cExpr e3 varEnv funEnv (addINCSP -1 C1)))))
     | While(e, body) ->
       let labbegin = newLabel()
       let (jumptest, C1) = 

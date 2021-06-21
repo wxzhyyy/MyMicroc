@@ -34,6 +34,7 @@ and access =
                                                                    
 and stmt =                                                         
   | If of expr * stmt * stmt         (* Conditional                 *)
+  | For of expr * expr * expr * stmt (* for loop                    *)
   | While of expr * stmt             (* While loop                  *)
   | Expr of expr                     (* Expression statement   e;   *)
   | Return of expr option            (* Return from method          *)

@@ -42,6 +42,7 @@ type token =
   | PRINTLN
   | RETURN
   | VOID
+  | FOR
   | WHILE
   | CSTSTRING of (string)
   | NAME of (string)
@@ -89,6 +90,7 @@ type tokenId =
     | TOKEN_PRINTLN
     | TOKEN_RETURN
     | TOKEN_VOID
+    | TOKEN_FOR
     | TOKEN_WHILE
     | TOKEN_CSTSTRING
     | TOKEN_NAME
