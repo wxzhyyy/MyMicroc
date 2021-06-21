@@ -180,6 +180,19 @@ and cExpr (e : expr) (varEnv : VarEnv) (funEnv : FunEnv) : instr list =
     | Assign(acc, e) -> cAccess acc varEnv funEnv @ cExpr e varEnv funEnv @ [STI]
     | CstI i         -> [CSTI i]
     | Addr acc       -> cAccess acc varEnv funEnv
+    | AssignPrim(ope,acc,e) ->
+      cAccess acc varEnv funEnv
+      @ [DUP] @ [LDI]
+      @ cExpr e varEnv funEnv 
+      @ (match ope with
+         | "+=" ->[ADD]
+         | "-=" ->[SUB]
+         | "*=" ->[MUL]
+         | "/=" ->[DIV]
+         | "%=" ->[MOD]
+         | _    -> raise (Failure "unknown primitive 0")
+      )
+      @ [STI]
     | Prim1(ope, e1) ->
       cExpr e1 varEnv funEnv
       @ (match ope with

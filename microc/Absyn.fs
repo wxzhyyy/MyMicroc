@@ -18,6 +18,7 @@ and expr =
   | PreDec of access                 (* --i or --a[e]               *)                                                     
   | Access of access                 (* x    or  *p    or  a[e]     *)
   | Assign of access * expr          (* x=e  or  *p=e  or  a[e]=e   *)
+  | AssignPrim of string *access * expr      (* x+=e or  *p+=e or  a[e]+=e  *)
   | Addr of access                   (* &x   or  &*p   or  &a[e]    *)
   | CstI of int                      (* Constant                    *)
   | Prim1 of string * expr           (* Unary primitive operator    *)
