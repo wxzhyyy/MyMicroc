@@ -31,6 +31,8 @@ type token =
   | TIMES
   | DIV
   | MOD
+  | COLON
+  | QUEST
   | PREINC
   | PREDEC
   | CHAR
@@ -79,6 +81,8 @@ type tokenId =
     | TOKEN_TIMES
     | TOKEN_DIV
     | TOKEN_MOD
+    | TOKEN_COLON
+    | TOKEN_QUEST
     | TOKEN_PREINC
     | TOKEN_PREDEC
     | TOKEN_CHAR

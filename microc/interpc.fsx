@@ -18,8 +18,8 @@ let _ =
       
       // ex 是 paser 返回的 抽象语法树
       try ignore (         
-          let ex = fromFile source;
-          run ex inputargs)   //run 方法对语法树求值
+            let ex = fromFile source;
+            run ex inputargs)   //run 方法对语法树求值
       with Failure msg -> printf "ERROR: %s\n" msg
    else
       printf "Usage: interpc.exe <source file> <args>\n";

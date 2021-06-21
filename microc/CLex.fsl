@@ -21,6 +21,8 @@ let keyword s =
     | "else"    -> ELSE
     | "false"   -> CSTBOOL 0
     | "if"      -> IF
+    | "switch"  -> SWITCH
+    | "case"    -> CASE
     | "int"     -> INT
     | "null"    -> NULL
     | "print"   -> PRINT
@@ -95,6 +97,8 @@ rule Token = parse          // 每个 规则rule 会生成为一个函数，函�
   | '['             { LBRACK }
   | ']'             { RBRACK }
   | ';'             { SEMI }
+  | ':'             { COLON }
+  | '?'             { QUEST }
   | ','             { COMMA }
   | "//"            { EndLineComment lexbuf; Token lexbuf }  //单行注释处理规则，调用响应处理函数
                                                              //参数是 lexbuf

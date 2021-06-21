@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\计算机科学\\study2021上\\编程语言原理与编译\\课程资料\\sigcc-plzoofs-master\\plzoofs\\microc\\interpc.fsproj": {}
+    "C:\\Users\\14815\\Documents\\GitHub\\MyMicroc\\microc\\interpc.fsproj": {}
   },
   "projects": {
-    "D:\\计算机科学\\study2021上\\编程语言原理与编译\\课程资料\\sigcc-plzoofs-master\\plzoofs\\microc\\interpc.fsproj": {
+    "C:\\Users\\14815\\Documents\\GitHub\\MyMicroc\\microc\\interpc.fsproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\计算机科学\\study2021上\\编程语言原理与编译\\课程资料\\sigcc-plzoofs-master\\plzoofs\\microc\\interpc.fsproj",
+        "projectUniqueName": "C:\\Users\\14815\\Documents\\GitHub\\MyMicroc\\microc\\interpc.fsproj",
         "projectName": "interpc",
-        "projectPath": "D:\\计算机科学\\study2021上\\编程语言原理与编译\\课程资料\\sigcc-plzoofs-master\\plzoofs\\microc\\interpc.fsproj",
-        "packagesPath": "C:\\Users\\lenovo\\.nuget\\packages\\",
-        "outputPath": "D:\\计算机科学\\study2021上\\编程语言原理与编译\\课程资料\\sigcc-plzoofs-master\\plzoofs\\microc\\obj\\",
+        "projectPath": "C:\\Users\\14815\\Documents\\GitHub\\MyMicroc\\microc\\interpc.fsproj",
+        "packagesPath": "C:\\Users\\14815\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\14815\\Documents\\GitHub\\MyMicroc\\microc\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\14815\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -60,7 +60,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }
